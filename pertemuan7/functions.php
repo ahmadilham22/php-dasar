@@ -13,4 +13,25 @@
         }
         return $rows;
    }
+
+
+   function tambah($tes){
+        global $conn;
+
+        $nama = $tes["nama"] ;
+        $npm = $tes["npm"];
+        $email = $tes["email"];
+        $jurusan = $tes["jurusan"];
+        $gambar = $tes["gambar"];
+
+         $query = "INSERT INTO mahasiswa
+                    VALUES
+                    ('', '$nama','$npm', '$email', '$jurusan', '$gambar' )
+                    
+                    ";
+
+        mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+   }
 ?>
